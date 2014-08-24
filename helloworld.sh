@@ -32,9 +32,11 @@ if [ -z `ls -A "$templates/$1"` ]; then
     exit 1
 fi
 
-cp -i -R "$templates/$1/"* .
 
-cd "$templates/$1"
+pushd "$templates/$1" > /dev/null
 echo ""
-echo "Files copied: `ls *`"
+echo "Files to copy: `ls *`"
 echo ""
+popd > /dev/null
+
+cp -i -R "$templates/$1/"* .
