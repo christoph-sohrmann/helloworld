@@ -32,7 +32,7 @@ if [ -z `ls -A "$templates/$1"` ]; then
     exit 1
 fi
 
-cp -R "$templates/$1/"* .
+cp -i -R "$templates/$1/"* .
 
 cd "$templates/$1"
 echo ""
